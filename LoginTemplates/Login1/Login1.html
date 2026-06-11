@@ -10,10 +10,53 @@
 
 <body>
 
-    <div id="box-login">
+    <div id="container">
+        <div id="box-login">
+            <div id="inputs">
+                <h2>Bem vindo de volta!</h2>
+                <div id="input">
+                    <p>Email:</p>
+                    <input type="text" id="input_email"><br>
+                    <span id="erro_box"></span>
+                </div>
+                <div id="input">
+                    <p>Senha:</p>
+                    <input type="password" id="input_senha"><br>
+                    <span id="erro_box2"></span>
+                </div>
 
+            </div>
+
+            <span>Não tem uma conta ainda? Cadastre-se <a href="">clicando aqui!</a></span><br><br>
+            <button onclick="logar()">Entrar</button>
+        </div>
     </div>
 
 </body>
 
 </html>
+
+<script>
+
+    function logar() {
+
+        var email = input_email.value;
+        var senha = input_senha.value;
+
+        if (email == "") {
+            erro_box.innerHTML = "Insira um email!";
+            setTimeout(() => {
+                erro_box.innerHTML = "";
+            }, 2000);
+        }
+        if (senha == "") {
+            erro_box2.innerHTML = "Insira uma senha!";
+            setTimeout(() => {
+                erro_box2.innerHTML = "";
+            }, 2000);
+
+        }
+
+    }
+
+</script>
